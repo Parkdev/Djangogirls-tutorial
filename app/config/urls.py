@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from blog import views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', views.post_list, name='post-list'), #해당 url에서 입력이들어오면 views.post_list에보냄, 이후 함수에서 받은 요청을 처리한 결과를 리턴, 리턴된 결과는 브라우저에 표시
 ]
